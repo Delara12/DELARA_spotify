@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Song</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background3.jpeg'); /* Your image path for the Add Song page */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color:black;
+        }
+
+        .container {
+            max-width: 550px;
+            padding: 20px;
+            background: #a1e3f3; /* Darker background */
+            border-radius: 8px;
+            box-shadow: rgb(14, 13, 13);
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: black;;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="file"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid gray;
+            border-radius: 4px;
+            background: white;
+            color: black;
+        }
+
+        button {
+            background-color: #3072ff;
+            color:white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 90%;
+        }
+
+        button:hover {
+            background-color: #3271fa;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 15px;
+            color: #0044ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Song</h1>
+        <form action="/add" method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Song Title" required>
+            <input type="text" name="artist" placeholder="Artist" required>
+            <textarea name="lyrics" placeholder="Lyrics"></textarea>
+            <input type="file" name="imageFile" accept="image/*" required>
+            <input type="file" name="songFile" accept="audio/*" required>
+            <button type="submit">Add Song</button>
+            <a href="/" class="back-link">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>       
